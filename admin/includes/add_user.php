@@ -1,32 +1,31 @@
 <?php
 
-if(isset($_POST['create_post'])) {
+if(isset($_POST['create_user'])) {
   
-  $post_title = $_POST['title'];
-  $post_author = $_POST['author'];
-  $post_category_id = $_POST['post_category'];
-  $post_status = $_POST['post_status'];
+  $user_firstname = $_POST['user_firstname'];
+  $user_lastname = $_POST['user_lastname'];
+  $user_role = $_POST['user_role'];
   
-  $post_image = $_FILES['image']['name'];
-  $post_image_temp = $_FILES['image']['tmp_name'];
+//  $post_image = $_FILES['image']['name'];
+//  $post_image_temp = $_FILES['image']['tmp_name'];
   
-  $post_tags = $_POST['post_tags'];
-  $post_content = $_POST['post_content'];
-  $post_date = date('d-m-y');
-  
-  
-  move_uploaded_file($post_image_temp, "../images/$post_image");
+  $username = $_POST['username'];
+  $user_email = $_POST['user_email'];
+  $user_password = $_POST['user_password'];
+//  $post_date = date('d-m-y');
   
   
-  $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status) ";
+//  move_uploaded_file($post_image_temp, "../images/$post_image");
+//  
+//  
+  $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
   
-  $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}') ";
+  $query .= "VALUES('{$user_firstname}','{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}') ";
   
-  $create_post_query = mysqli_query($connection, $query);
+  $create_user_query = mysqli_query($connection, $query);
   
-  confirm($create_post_query);
+  confirm($create_user_query);
   
-  $the_post_id = mysqli_insert_id($connection);
   
 }
 
@@ -49,35 +48,16 @@ if(isset($_POST['create_post'])) {
   </div>
   
   <div class="form-group">
-    <label for="users">Users</label>
-    <select name="post_user" id="">
-      
-      <?php
-      
-      $query = "SELECT * FROM users";
-      $select_categories = mysqli_query($connection,$query);
-
-      confirm($select_categories);
-
-      while($row = mysqli_fetch_assoc($select_users)) {
-        $user_id = $row['user_id'];
-        $username = $row['username'];
-      
-      echo "<option value='{$username}'>{$username}</option>";
-        
-      }
-      
-      
-        
-      ?>
-      
-      
+    
+    <select name="user_role" id="">
+     
+      <option value="subscriber">Select Options</option>
+      <option value="admin">Admin</option>
+      <option value="subscriber">Subscriber</option>
       
     </select>
     
   </div>
-  
-
   
 <!--
   <div class="form-group">

@@ -112,6 +112,27 @@
       
       
       
+      <?php
+      
+//      $query = "SELECT * FROM users";
+//      $select_categories = mysqli_query($connection,$query);
+//
+//      confirm($select_categories);
+//
+//      while($row = mysqli_fetch_assoc($select_users)) {
+//        $user_id = $row['user_id'];
+//        $username = $row['username'];
+//      
+//      echo "<option value='{$username}'>{$username}</option>";
+//        
+//      }
+//      
+//      
+//        
+      ?>
+      
+      
+      
       
     </select>
     

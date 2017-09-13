@@ -1,4 +1,4 @@
-<table class="table table-inverse table-hover table-responsive">
+<table class="table table-bordered table-hover table-responsive">
         <thead style="color:white;background-color:#000">
           <tr>
             <th>Id</th>
@@ -10,6 +10,8 @@
             <th>Tags</th>
             <th>Comments</th>
             <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         
