@@ -1,5 +1,10 @@
 # PHP_CMS_TEMPLATE
 
+![build](https://img.shields.io/badge/build-unstable-blue.svg)
+
+[![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
+
+
 A Content Management System template featuring Modular Components, CRUD, Latest PHP Data Encryption specifications, Strong SQL Injection Prevention, Responsive, Nice Form Validation, and Roles.
 
 ### Demo Link
