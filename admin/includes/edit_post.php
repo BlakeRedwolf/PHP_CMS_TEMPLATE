@@ -37,6 +37,17 @@
     
     move_uploaded_file($post_image_temp, "../images/$post_image");
     
+    $query = "UPDATE posts SET ";
+    $query .="post_title = '{$post_title}', ";
+    $query .="post_category_id = '{$post_category_id}', ";
+    $query .="post_date = now(), ";
+    $query .="post_author = '{$post_author}', ";
+    $query .="post_status = '{$post_status}', ";
+    $query .="post_tags = '{$post_tags}', ";
+    $query .="post_content = '{$post_content}', ";
+    $query .="post_image = '{$post_image}' ";
+    $query .= "WHERE post_id = {$the_post_id} ";
+    
     if(empty($post_image)) {
       
       $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
@@ -50,16 +61,7 @@
       
     }
     
-    $query = "UPDATE posts SET ";
-    $query .="post_title = '{$post_title}', ";
-    $query .="post_category_id = '{$post_category_id}', ";
-    $query .="post_date = now(), ";
-    $query .="post_author = '{$post_author}', ";
-    $query .="post_status = '{$post_status}', ";
-    $query .="post_tags = '{$post_tags}', ";
-    $query .="post_content = '{$post_content}', ";
-    $query .="post_image = '{$post_image}' ";
-    $query .= "WHERE post_id = {$the_post_id} ";
+    
     
     $update_post = mysqli_query($connection, $query);
     

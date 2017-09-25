@@ -16,8 +16,9 @@
       <div class="col-lg-12">
 
       <h1 class="page-header">
-        Administrator Dashboard
-        <small>By Blake Redwolf</small>
+        Welcome to the Admin Dashboard
+        
+        <small> <?php echo $_SESSION['username']. "!" ?> </small>
       </h1>
 
 
